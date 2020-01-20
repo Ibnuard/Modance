@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "830500008226",
+    "firebase_url": "https://modance-9d176.firebaseio.com",
+    "project_id": "modance-9d176",
+    "storage_bucket": "modance-9d176.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:830500008226:android:df6c1651545e7c32ec757b",
+        "android_client_info": {
+          "package_name": "com.modanceapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "830500008226-dtlmbp6hq1ho37aj5n58sisl641phevr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAXzFiZk9pgR_SqV5vpPpaCx5CCNR5VwDc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "830500008226-dtlmbp6hq1ho37aj5n58sisl641phevr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
