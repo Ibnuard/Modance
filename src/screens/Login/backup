@@ -1,0 +1,20 @@
+<TextInput
+          style={styles.textInput}
+          autoCapitalize="none"
+          placeholder="Email"
+          onChangeText={email => this.setState({email})}
+          value={this.state.email}
+        />
+        <TextInput
+          secureTextEntry
+          style={styles.textInput}
+          autoCapitalize="none"
+          placeholder="Password"
+          onChangeText={password => this.setState({password})}
+          value={this.state.password}
+        />
+        <Button title="Login" onPress={this.handleLogin} />
+        <Button
+          title="Don't have an account? Sign Up"
+          onPress={() => this.props.navigation.navigate('SignUp')}
+        />
