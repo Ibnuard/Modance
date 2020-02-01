@@ -10,6 +10,8 @@ import SignUp from './src/screens/SignUp/SignUp';
 import Login from './src/screens/Login/Login';
 import Main from './src/screens/Main/Main';
 import Materi from './src/screens/Materi/Materi';
+import Bab from './src/screens/Bab/Bab';
+import SubabSatu from './src/screens/SubabSatu/SubabSatu';
 
 const RootStack = createSwitchNavigator(
   {
@@ -18,9 +20,11 @@ const RootStack = createSwitchNavigator(
     Login,
     Main,
     Materi,
+    Bab,
+    SubabSatu,
   },
   {
-    initialRouteName: 'Loading',
+    initialRouteName: 'Main',
   },
 );
 const App = createAppContainer(RootStack);

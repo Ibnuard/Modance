@@ -63,7 +63,7 @@ export default class Main extends React.Component {
     firebase
       .auth()
       .signOut()
-      .then(this.props.navigation.navigate('Loading'));
+      .then(() => this.props.navigation.navigate('Loading'));
   };
 
   render() {
@@ -103,7 +103,10 @@ export default class Main extends React.Component {
           <View style={{flex: 1, flexDirection: 'row', margin: 8}}>
             <View style={{flex: 1, flexDirection: 'column'}}>
               <View style={styles.menuRed}>
-                <TouchableOpacity activeOpacity={0.4} style={styles.buttonMenu}>
+                <TouchableOpacity
+                  onPress={() => this.props.navigation.navigate('Bab')}
+                  activeOpacity={0.4}
+                  style={styles.buttonMenu}>
                   <Image
                     style={{
                       width: 72,

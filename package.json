@@ -16,9 +16,11 @@
     "react-native-firebase": "^5.6.0",
     "react-native-gesture-handler": "^1.5.3",
     "react-native-image-slider-box": "^1.0.12",
+    "react-native-pdf": "^6.0.1",
     "react-native-snap-carousel": "^3.8.4",
     "react-navigation": "^4.0.10",
     "react-reader": "^0.18.3",
+    "rn-fetch-blob": "^0.12.0",
     "stream": "0.0.2"
   },
   "devDependencies": {
