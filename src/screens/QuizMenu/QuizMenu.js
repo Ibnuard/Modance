@@ -65,12 +65,12 @@ export default class Main extends React.Component {
         <View style={styles.body}>
           <ScrollView>
             <TouchableOpacity
-              onPress={() => this.props.navigation.navigate('SubabSatu')}
+              onPress={() => this.props.navigation.navigate('QuizBab')}
               activeOpacity={0.9}>
               <View style={styles.bab}>
-                <Text style={styles.babText}>BAB I</Text>
+                <Text style={styles.babText}>Kuis</Text>
                 <Text style={styles.babDesc}>
-                  Sejarah dan Ciri Khas Tari Modern
+                  Kerjakan kuis sesuai dengan bab pilihan
                 </Text>
               </View>
             </TouchableOpacity>
@@ -78,19 +78,9 @@ export default class Main extends React.Component {
               onPress={() => this.props.navigation.navigate('SubabDua')}
               activeOpacity={0.9}>
               <View style={styles.bab}>
-                <Text style={styles.babText}>BAB II</Text>
+                <Text style={styles.babText}>Latihan Soal</Text>
                 <Text style={styles.babDesc}>
-                  Sejarah dan Ciri Khas Tari Modern
-                </Text>
-              </View>
-            </TouchableOpacity>
-            <TouchableOpacity
-              onPress={() => this.props.navigation.navigate('SubabTiga')}
-              activeOpacity={0.9}>
-              <View style={styles.bab}>
-                <Text style={styles.babText}>BAB III</Text>
-                <Text style={styles.babDesc}>
-                  Sejarah dan Ciri Khas Tari Modern
+                  Kerjakan latihan soal dengan semua bab
                 </Text>
               </View>
             </TouchableOpacity>

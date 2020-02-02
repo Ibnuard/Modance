@@ -7,7 +7,6 @@ import {
   TouchableOpacity,
   Dimensions,
 } from 'react-native';
-
 import firebase from 'react-native-firebase';
 import styles from './styles';
 import {ScrollView} from 'react-native-gesture-handler';
@@ -19,8 +18,17 @@ export default class Main extends React.Component {
     super(props);
     this.state = {
       name: '',
+      materi: '',
     };
   }
+
+  _gotoMateri = (file, title, desc) => {
+    this.props.navigation.navigate('Materi', {
+      file,
+      title,
+      desc,
+    });
+  };
 
   componentDidMount() {
     const uid = firebase.auth().currentUser.uid;
@@ -38,7 +46,7 @@ export default class Main extends React.Component {
         <View style={styles.header}>
           <View style={styles.headerTop}>
             <TouchableOpacity
-              onPress={() => this.props.navigation.navigate('Main')}
+              onPress={() => this.props.navigation.navigate('Bab')}
               style={{alignSelf: 'center'}}>
               <Image
                 style={styles.backBtn}
@@ -65,32 +73,50 @@ export default class Main extends React.Component {
         <View style={styles.body}>
           <ScrollView>
             <TouchableOpacity
-              onPress={() => this.props.navigation.navigate('SubabSatu')}
+              onPress={() =>
+                this._gotoMateri(
+                  'https://jagem.000webhostapp.com/Modance/jenistari.pdf',
+                  'Jenis - Jenis Tari Modern',
+                  'Macam jenis - jenis tari kodern',
+                )
+              }
               activeOpacity={0.9}>
               <View style={styles.bab}>
-                <Text style={styles.babText}>BAB I</Text>
+                <Text style={styles.babText}>Jenis - Jenis Tari Modern</Text>
                 <Text style={styles.babDesc}>
-                  Sejarah dan Ciri Khas Tari Modern
+                  Macam jenis - jenis tari kodern
                 </Text>
               </View>
             </TouchableOpacity>
             <TouchableOpacity
-              onPress={() => this.props.navigation.navigate('SubabDua')}
+              onPress={() =>
+                this._gotoMateri(
+                  'https://jagem.000webhostapp.com/Modance/jenisgaya.pdf',
+                  'Jenis Gaya Tari Modern',
+                  'Berbagai jenis gaya dalam tari modern',
+                )
+              }
               activeOpacity={0.9}>
               <View style={styles.bab}>
-                <Text style={styles.babText}>BAB II</Text>
+                <Text style={styles.babText}>Jenis Gaya Tari Modern</Text>
                 <Text style={styles.babDesc}>
-                  Sejarah dan Ciri Khas Tari Modern
+                  Berbagai jenis gaya dalam tari modern
                 </Text>
               </View>
             </TouchableOpacity>
             <TouchableOpacity
-              onPress={() => this.props.navigation.navigate('SubabTiga')}
+              onPress={() =>
+                this._gotoMateri(
+                  'https://jagem.000webhostapp.com/Modance/fungsi.pdf',
+                  'Fungsi dan Peran Tari Modern',
+                  'Macam fungsi dan peran tari modern',
+                )
+              }
               activeOpacity={0.9}>
               <View style={styles.bab}>
-                <Text style={styles.babText}>BAB III</Text>
+                <Text style={styles.babText}>Fungsi dan Peran Tari Modern</Text>
                 <Text style={styles.babDesc}>
-                  Sejarah dan Ciri Khas Tari Modern
+                  Macam fungsi dan peran tari modern
                 </Text>
               </View>
             </TouchableOpacity>

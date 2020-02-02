@@ -7,7 +7,6 @@ import {
   TouchableOpacity,
   Dimensions,
 } from 'react-native';
-
 import firebase from 'react-native-firebase';
 import styles from './styles';
 import {ScrollView} from 'react-native-gesture-handler';
@@ -19,8 +18,17 @@ export default class Main extends React.Component {
     super(props);
     this.state = {
       name: '',
+      materi: '',
     };
   }
+
+  _gotoMateri = (file, title, desc) => {
+    this.props.navigation.navigate('Materi', {
+      file,
+      title,
+      desc,
+    });
+  };
 
   componentDidMount() {
     const uid = firebase.auth().currentUser.uid;
@@ -38,7 +46,7 @@ export default class Main extends React.Component {
         <View style={styles.header}>
           <View style={styles.headerTop}>
             <TouchableOpacity
-              onPress={() => this.props.navigation.navigate('Main')}
+              onPress={() => this.props.navigation.navigate('Bab')}
               style={{alignSelf: 'center'}}>
               <Image
                 style={styles.backBtn}
@@ -65,32 +73,50 @@ export default class Main extends React.Component {
         <View style={styles.body}>
           <ScrollView>
             <TouchableOpacity
-              onPress={() => this.props.navigation.navigate('SubabSatu')}
+              onPress={() =>
+                this._gotoMateri(
+                  'https://jagem.000webhostapp.com/Modance/luarnegeri.pdf',
+                  'Tokoh Penari dan Koreografer',
+                  'Tokoh - tokoh penari dan koreografer luar negeri',
+                )
+              }
               activeOpacity={0.9}>
               <View style={styles.bab}>
-                <Text style={styles.babText}>BAB I</Text>
+                <Text style={styles.babText}>Tokoh Penari dan Koreografer</Text>
                 <Text style={styles.babDesc}>
-                  Sejarah dan Ciri Khas Tari Modern
+                  Tokoh - tokoh penari dan koreografer luar negeri
                 </Text>
               </View>
             </TouchableOpacity>
             <TouchableOpacity
-              onPress={() => this.props.navigation.navigate('SubabDua')}
+              onPress={() =>
+                this._gotoMateri(
+                  'https://jagem.000webhostapp.com/Modance/dalamnegeri.pdf',
+                  'Tokoh Penari dan Koreografer',
+                  'Tokoh - tokoh penari dan koreografer dalam negeri',
+                )
+              }
               activeOpacity={0.9}>
               <View style={styles.bab}>
-                <Text style={styles.babText}>BAB II</Text>
+                <Text style={styles.babText}>Tokoh Penari dan Koreografer</Text>
                 <Text style={styles.babDesc}>
-                  Sejarah dan Ciri Khas Tari Modern
+                  Tokoh - tokoh penari dan koreografer dalam negeri
                 </Text>
               </View>
             </TouchableOpacity>
             <TouchableOpacity
-              onPress={() => this.props.navigation.navigate('SubabTiga')}
+              onPress={() =>
+                this._gotoMateri(
+                  'https://jagem.000webhostapp.com/Modance/teknik.pdf',
+                  'Teknik Tari Modern',
+                  'Teknik - teknik dalam Tari Modern',
+                )
+              }
               activeOpacity={0.9}>
               <View style={styles.bab}>
-                <Text style={styles.babText}>BAB III</Text>
+                <Text style={styles.babText}>Teknik Tari Modern</Text>
                 <Text style={styles.babDesc}>
-                  Sejarah dan Ciri Khas Tari Modern
+                  Teknik - teknik dalam Tari Modern
                 </Text>
               </View>
             </TouchableOpacity>

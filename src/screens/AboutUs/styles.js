@@ -10,6 +10,8 @@ const styles = StyleSheet.create({
   },
   body: {
     flex: 2,
+    backgroundColor: 'white',
+    alignItems: 'center',
     marginHorizontal: 20,
   },
   headerTop: {
@@ -22,10 +24,6 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: 'bold',
     color: 'white',
-  },
-  imageAvatar: {
-    width: 36,
-    height: 36,
   },
   backBtn: {
     alignSelf: 'center',
@@ -44,31 +42,6 @@ const styles = StyleSheet.create({
   },
   profileDesc: {
     color: 'white',
-    fontWeight: 'normal',
-    fontSize: 14,
-  },
-  bab: {
-    flexDirection: 'column',
-    justifyContent: 'center',
-    marginTop: 25,
-    width: '100%',
-    height: 120,
-    backgroundColor: '#615BFF',
-    shadowColor: '#000',
-    borderRadius: 10,
-    shadowOpacity: 0.5,
-    shadowRadius: 5,
-    elevation: 8,
-  },
-  babText: {
-    color: 'white',
-    textAlign: 'center',
-    fontWeight: 'bold',
-    fontSize: 18,
-  },
-  babDesc: {
-    color: 'white',
-    textAlign: 'center',
     fontWeight: 'normal',
     fontSize: 14,
   },

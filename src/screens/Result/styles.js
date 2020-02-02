@@ -10,6 +10,7 @@ const styles = StyleSheet.create({
   },
   body: {
     flex: 2,
+    backgroundColor: 'white',
     marginHorizontal: 20,
   },
   headerTop: {
@@ -50,9 +51,9 @@ const styles = StyleSheet.create({
   bab: {
     flexDirection: 'column',
     justifyContent: 'center',
-    marginTop: 25,
+    marginTop: 50,
     width: '100%',
-    height: 120,
+    height: 50,
     backgroundColor: '#615BFF',
     shadowColor: '#000',
     borderRadius: 10,
@@ -63,14 +64,21 @@ const styles = StyleSheet.create({
   babText: {
     color: 'white',
     textAlign: 'center',
-    fontWeight: 'bold',
-    fontSize: 18,
+    fontSize: 14,
   },
   babDesc: {
     color: 'white',
     textAlign: 'center',
     fontWeight: 'normal',
     fontSize: 14,
+  },
+  box: {
+    width: 90,
+    height: 90,
+    paddingVertical: 10,
+    alignItems: 'center',
+    backgroundColor: '#FBA36A',
+    borderRadius: 10,
   },
 });
 

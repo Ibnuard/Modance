@@ -7,7 +7,6 @@ import {
   TouchableOpacity,
   Dimensions,
 } from 'react-native';
-
 import Pdf from 'react-native-pdf';
 import styles from './styles';
 
@@ -16,22 +15,47 @@ export default class Main extends React.Component {
     super(props);
     this.state = {
       name: this.props.navigation.state.params.file,
+      title: this.props.navigation.state.params.title,
+      desc: this.props.navigation.state.params.desc,
     };
   }
   componentDidMount() {
     const file = this.props.navigation.state.params.file;
-    alert(this.state.name);
   }
   render() {
     const source = {
-      uri: 'https://modanceapp.000webhostapp.com/materi/definisi.pdf',
+      uri: this.state.name,
       cache: true,
     };
     return (
       <View style={styles.container}>
+        <StatusBar backgroundColor="#615BFF" barStyle="light-content" />
+        <View style={styles.header}>
+          <View style={styles.headerTop}>
+            <TouchableOpacity
+              onPress={() => this.props.navigation.navigate('Bab')}
+              style={{alignSelf: 'center'}}>
+              <Image
+                style={styles.backBtn}
+                source={require('../../images/back.png')}
+              />
+            </TouchableOpacity>
+            <View
+              style={{
+                flex: 1,
+                flexDirection: 'column',
+                paddingHorizontal: 14,
+              }}>
+              <Text style={styles.profileText}>{this.state.title}</Text>
+              <Text style={styles.profileDesc}>{this.state.desc}</Text>
+            </View>
+          </View>
+        </View>
         <Pdf
+          horizontal={true}
+          scale={1}
+          enableRTL={true}
           enablePaging={true}
-          enableAntialiasing={true}
           source={source}
           onLoadComplete={(numberOfPages, filePath) => {
             console.log(`number of pages: ${numberOfPages}`);

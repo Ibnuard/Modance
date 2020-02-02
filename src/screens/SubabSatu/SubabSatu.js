@@ -10,6 +10,7 @@ import {
 
 import firebase from 'react-native-firebase';
 import styles from './styles';
+import {ScrollView} from 'react-native-gesture-handler';
 
 const {width: screenWidth} = Dimensions.get('window');
 
@@ -22,8 +23,8 @@ export default class Main extends React.Component {
     };
   }
 
-  _gotoMateri = file => {
-    this.props.navigation.navigate('Materi', {file});
+  _gotoMateri = (file, title, desc) => {
+    this.props.navigation.navigate('Materi', {file, title, desc});
   };
 
   componentDidMount() {
@@ -67,40 +68,66 @@ export default class Main extends React.Component {
           </View>
         </View>
         <View style={styles.body}>
-          <TouchableOpacity
-            onPress={() =>
-              this._gotoMateri(
-                'https://modanceapp.000webhostapp.com/materi/sejarah.pdf',
-              )
-            }
-            activeOpacity={0.9}>
-            <View style={styles.bab}>
-              <Text style={styles.babText}>Sejarah Tari Modern</Text>
-              <Text style={styles.babDesc}>
-                Sejarah adanya tari modern {this.state.materi}
-              </Text>
-            </View>
-          </TouchableOpacity>
-          <TouchableOpacity activeOpacity={0.9}>
-            <View style={styles.bab}>
-              <Text style={styles.babText}>Definisi Tari Modern</Text>
-              <Text style={styles.babDesc}>
-                Definisi tari modern menurut para ahli
-              </Text>
-            </View>
-          </TouchableOpacity>
-          <TouchableOpacity activeOpacity={0.9}>
-            <View style={styles.bab}>
-              <Text style={styles.babText}>Ciri Khas</Text>
-              <Text style={styles.babDesc}>Ciri khas sebuah tari</Text>
-            </View>
-          </TouchableOpacity>
-          <TouchableOpacity activeOpacity={0.9}>
-            <View style={styles.bab}>
-              <Text style={styles.babText}>Ciri Khas Tari Modern</Text>
-              <Text style={styles.babDesc}>Ciri khas sebuah tari modern</Text>
-            </View>
-          </TouchableOpacity>
+          <ScrollView>
+            <TouchableOpacity
+              onPress={() =>
+                this._gotoMateri(
+                  'https://jagem.000webhostapp.com/Modance/sejarahbaru.pdf',
+                  'Sejarah Tari Modern',
+                  'Sejarah adanya tari modern',
+                )
+              }
+              activeOpacity={0.9}>
+              <View style={styles.bab}>
+                <Text style={styles.babText}>Sejarah Tari Modern</Text>
+                <Text style={styles.babDesc}>Sejarah adanya tari modern</Text>
+              </View>
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() =>
+                this._gotoMateri(
+                  'https://jagem.000webhostapp.com/Modance/definisi.pdf',
+                  'Definisi Tari Modern',
+                  'Definisi tari modern menurut para ahli',
+                )
+              }
+              activeOpacity={0.9}>
+              <View style={styles.bab}>
+                <Text style={styles.babText}>Definisi Tari Modern</Text>
+                <Text style={styles.babDesc}>
+                  Definisi tari modern menurut para ahli
+                </Text>
+              </View>
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() =>
+                this._gotoMateri(
+                  'https://jagem.000webhostapp.com/Modance/cirikhas.pdf',
+                  'Ciri Khas Tari',
+                  'Ciri khas sebuah tari',
+                )
+              }
+              activeOpacity={0.9}>
+              <View style={styles.bab}>
+                <Text style={styles.babText}>Ciri Khas</Text>
+                <Text style={styles.babDesc}>Ciri khas sebuah tari</Text>
+              </View>
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() =>
+                this._gotoMateri(
+                  'https://jagem.000webhostapp.com/Modance/tarimodern.pdf',
+                  'Ciri Khas Tari Modern',
+                  'Ciri khas sebuah tari modern',
+                )
+              }
+              activeOpacity={0.9}>
+              <View style={styles.bab}>
+                <Text style={styles.babText}>Ciri Khas Tari Modern</Text>
+                <Text style={styles.babDesc}>Ciri khas sebuah tari modern</Text>
+              </View>
+            </TouchableOpacity>
+          </ScrollView>
         </View>
       </View>
     );

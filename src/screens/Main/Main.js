@@ -120,7 +120,7 @@ export default class Main extends React.Component {
               </View>
               <View style={styles.menuBlue}>
                 <TouchableOpacity
-                  onPress={this.handleLogout}
+                  onPress={() => this.handleLogout}
                   activeOpacity={0.4}
                   style={styles.buttonMenu}>
                   <Image
@@ -137,7 +137,10 @@ export default class Main extends React.Component {
             </View>
             <View style={{flex: 1, flexDirection: 'column'}}>
               <View style={styles.menuBlue}>
-                <TouchableOpacity activeOpacity={0.4} style={styles.buttonMenu}>
+                <TouchableOpacity
+                  onPress={() => this.props.navigation.navigate('QuizMenu')}
+                  activeOpacity={0.4}
+                  style={styles.buttonMenu}>
                   <Image
                     style={{
                       width: 72,
@@ -150,7 +153,10 @@ export default class Main extends React.Component {
                 </TouchableOpacity>
               </View>
               <View style={styles.menuRed}>
-                <TouchableOpacity activeOpacity={0.4} style={styles.buttonMenu}>
+                <TouchableOpacity
+                  onPress={() => this.props.navigation.navigate('AboutUs')}
+                  activeOpacity={0.4}
+                  style={styles.buttonMenu}>
                   <Image
                     style={{
                       width: 72,

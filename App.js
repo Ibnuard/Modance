@@ -12,6 +12,13 @@ import Main from './src/screens/Main/Main';
 import Materi from './src/screens/Materi/Materi';
 import Bab from './src/screens/Bab/Bab';
 import SubabSatu from './src/screens/SubabSatu/SubabSatu';
+import SubabDua from './src/screens/SubabDua/SubabDua';
+import SubabTiga from './src/screens/SubabTiga/SubabTiga';
+import Quiz from './src/screens/Quiz/Quiz';
+import QuizMenu from './src/screens/QuizMenu/QuizMenu';
+import QuizBab from './src/screens/QuizBab/QuizBab';
+import Result from './src/screens/Result/Result';
+import AboutUs from './src/screens/AboutUs/AboutUs';
 
 const RootStack = createSwitchNavigator(
   {
@@ -22,6 +29,13 @@ const RootStack = createSwitchNavigator(
     Materi,
     Bab,
     SubabSatu,
+    SubabDua,
+    SubabTiga,
+    Quiz,
+    QuizMenu,
+    QuizBab,
+    Result,
+    AboutUs,
   },
   {
     initialRouteName: 'Main',

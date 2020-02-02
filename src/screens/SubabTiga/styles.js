@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
   bab: {
     flexDirection: 'column',
     justifyContent: 'center',
-    marginTop: 25,
+    marginTop: 24,
     width: '100%',
     height: 120,
     backgroundColor: '#615BFF',

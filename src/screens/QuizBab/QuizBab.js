@@ -12,7 +12,9 @@ import firebase from 'react-native-firebase';
 import styles from './styles';
 import {ScrollView} from 'react-native-gesture-handler';
 
-const {width: screenWidth} = Dimensions.get('window');
+import kuisBabI from '../../data/space';
+import kuisBabII from '../../data/westerns';
+import kuisBabIII from '../../data/computers';
 
 export default class Main extends React.Component {
   constructor(props) {
@@ -38,7 +40,7 @@ export default class Main extends React.Component {
         <View style={styles.header}>
           <View style={styles.headerTop}>
             <TouchableOpacity
-              onPress={() => this.props.navigation.navigate('Main')}
+              onPress={() => this.props.navigation.navigate('QuizMenu')}
               style={{alignSelf: 'center'}}>
               <Image
                 style={styles.backBtn}
@@ -57,7 +59,7 @@ export default class Main extends React.Component {
               }}>
               <Text style={styles.profileText}>Hai, {this.state.name}</Text>
               <Text style={styles.profileDesc}>
-                Pilih Bab untuk mulai belajar
+                Pilih Bab untuk mulai mulai mengerjakan soal
               </Text>
             </View>
           </View>
@@ -65,30 +67,48 @@ export default class Main extends React.Component {
         <View style={styles.body}>
           <ScrollView>
             <TouchableOpacity
-              onPress={() => this.props.navigation.navigate('SubabSatu')}
+              onPress={() =>
+                this.props.navigation.navigate('Quiz', {
+                  title: 'Bab I',
+                  questions: kuisBabI,
+                  color: '#36b1f0',
+                })
+              }
               activeOpacity={0.9}>
               <View style={styles.bab}>
-                <Text style={styles.babText}>BAB I</Text>
+                <Text style={styles.babText}>Kuis BAB I</Text>
                 <Text style={styles.babDesc}>
                   Sejarah dan Ciri Khas Tari Modern
                 </Text>
               </View>
             </TouchableOpacity>
             <TouchableOpacity
-              onPress={() => this.props.navigation.navigate('SubabDua')}
+              onPress={() =>
+                this.props.navigation.navigate('Quiz', {
+                  title: 'Bab II',
+                  questions: kuisBabII,
+                  color: '#36b1f0',
+                })
+              }
               activeOpacity={0.9}>
               <View style={styles.bab}>
-                <Text style={styles.babText}>BAB II</Text>
+                <Text style={styles.babText}>Kuis BAB II</Text>
                 <Text style={styles.babDesc}>
                   Sejarah dan Ciri Khas Tari Modern
                 </Text>
               </View>
             </TouchableOpacity>
             <TouchableOpacity
-              onPress={() => this.props.navigation.navigate('SubabTiga')}
+              onPress={() =>
+                this.props.navigation.navigate('Quiz', {
+                  title: 'Bab III',
+                  questions: kuisBabIII,
+                  color: '#36b1f0',
+                })
+              }
               activeOpacity={0.9}>
               <View style={styles.bab}>
-                <Text style={styles.babText}>BAB III</Text>
+                <Text style={styles.babText}>Kuis BAB III</Text>
                 <Text style={styles.babDesc}>
                   Sejarah dan Ciri Khas Tari Modern
                 </Text>
