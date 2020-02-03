@@ -32,6 +32,7 @@ export default class Main extends React.Component {
     ref.on('value', snap => this.setState({name: snap.val()}));
   }
   render() {
+    const {state} = this.props.navigation;
     return (
       <View style={styles.container}>
         <StatusBar backgroundColor="#615BFF" barStyle="light-content" />

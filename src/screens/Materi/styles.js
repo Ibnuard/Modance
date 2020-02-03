@@ -5,7 +5,8 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   pdf: {
-    flex: 1,
+    flex: 5,
+    backgroundColor: 'white',
     width: Dimensions.get('window').width,
     height: Dimensions.get('window').height,
   },
@@ -43,6 +44,25 @@ const styles = StyleSheet.create({
     color: 'white',
     fontWeight: 'normal',
     fontSize: 14,
+  },
+  bab: {
+    flexDirection: 'column',
+    justifyContent: 'center',
+    marginTop: 50,
+    width: '100%',
+    height: 50,
+    backgroundColor: '#615BFF',
+    shadowColor: '#000',
+    borderRadius: 10,
+    shadowOpacity: 0.5,
+    shadowRadius: 5,
+    elevation: 8,
+  },
+  babText: {
+    color: 'white',
+    textAlign: 'center',
+    fontWeight: 'bold',
+    fontSize: 18,
   },
 });
 

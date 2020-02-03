@@ -106,7 +106,7 @@ export default class Main extends React.Component {
               Hanif Febri Nugroho
             </Text>
             <Text style={{alignSelf: 'center', fontSize: 14}}>
-              Eka Setyanto
+              Eka Setiyanto
             </Text>
             <Text
               style={{
@@ -121,7 +121,7 @@ export default class Main extends React.Component {
               Hanifa Wahyu
             </Text>
             <Text style={{alignSelf: 'center', fontSize: 14}}>
-              Intan Komariah
+              Intan Komariyah
             </Text>
             <Text
               style={{

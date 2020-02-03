@@ -65,6 +65,22 @@ export default class Main extends React.Component {
           }}
           style={styles.pdf}
         />
+        <View
+          style={{
+            flex: 1,
+            justifyContent: 'center',
+            paddingHorizontal: 24,
+            paddingBottom: 24,
+            backgroundColor: 'white',
+          }}>
+          <TouchableOpacity
+            onPress={() => this.props.navigation.navigate('QuizMenu')}
+            activeOpacity={0.9}>
+            <View style={styles.bab}>
+              <Text style={styles.babText}>Mulai Kuis</Text>
+            </View>
+          </TouchableOpacity>
+        </View>
       </View>
     );
   }

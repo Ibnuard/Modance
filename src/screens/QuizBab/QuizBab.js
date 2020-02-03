@@ -12,9 +12,9 @@ import firebase from 'react-native-firebase';
 import styles from './styles';
 import {ScrollView} from 'react-native-gesture-handler';
 
-import kuisBabI from '../../data/space';
-import kuisBabII from '../../data/westerns';
-import kuisBabIII from '../../data/computers';
+import kuisBabI from '../../data/babsatu';
+import kuisBabII from '../../data/babdua';
+import kuisBabIII from '../../data/babtiga';
 
 export default class Main extends React.Component {
   constructor(props) {
