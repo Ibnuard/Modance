@@ -9,12 +9,15 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   body: {
-    flex: 2,
+    flex: 2.4,
     marginHorizontal: 20,
   },
+  header: {
+    flex: 0.8,
+  },
   headerTop: {
+    flex: 0.5,
     flexDirection: 'row',
-    backgroundColor: '#615BFF',
     padding: 20,
   },
   titleText: {
@@ -24,12 +27,14 @@ const styles = StyleSheet.create({
     color: 'white',
   },
   imageAvatar: {
+    position: 'absolute',
+    right: 0,
+    margin: 14,
     width: 36,
     height: 36,
   },
   backBtn: {
-    alignSelf: 'center',
-    marginRight: 14,
+    marginHorizontal: 14,
     width: 24,
     height: 18,
   },
@@ -50,10 +55,9 @@ const styles = StyleSheet.create({
   bab: {
     flexDirection: 'column',
     justifyContent: 'center',
-    marginTop: 25,
+    marginTop: 24,
     width: '100%',
-    height: 120,
-    backgroundColor: '#615BFF',
+    height: 100,
     shadowColor: '#000',
     borderRadius: 10,
     shadowOpacity: 0.5,
@@ -62,14 +66,23 @@ const styles = StyleSheet.create({
   },
   babText: {
     color: 'white',
-    textAlign: 'center',
+    paddingHorizontal: 24,
+    textAlign: 'left',
     fontWeight: 'bold',
     fontSize: 18,
   },
   babDesc: {
     color: 'white',
-    textAlign: 'center',
+    paddingHorizontal: 24,
+    textAlign: 'left',
     fontWeight: 'normal',
+    fontSize: 14,
+  },
+  babDescLM: {
+    color: 'white',
+    paddingHorizontal: 24,
+    textAlign: 'left',
+    fontWeight: 'bold',
     fontSize: 14,
   },
 });

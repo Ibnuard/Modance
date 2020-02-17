@@ -21,6 +21,7 @@ export default class Main extends React.Component {
     super(props);
     this.state = {
       name: '',
+      bab: 1,
     };
   }
 
@@ -33,6 +34,11 @@ export default class Main extends React.Component {
       .child('username');
     ref.on('value', snap => this.setState({name: snap.val()}));
   }
+
+  /*_gotoLoad = bab => {
+    
+  };*/
+
   render() {
     return (
       <View style={styles.container}>
@@ -68,10 +74,8 @@ export default class Main extends React.Component {
           <ScrollView>
             <TouchableOpacity
               onPress={() =>
-                this.props.navigation.navigate('Quiz', {
-                  title: 'Bab I',
-                  questions: kuisBabI,
-                  color: '#36b1f0',
+                this.props.navigation.navigate('LoadSoal', {
+                  bab: 1,
                 })
               }
               activeOpacity={0.9}>
@@ -84,10 +88,8 @@ export default class Main extends React.Component {
             </TouchableOpacity>
             <TouchableOpacity
               onPress={() =>
-                this.props.navigation.navigate('Quiz', {
-                  title: 'Bab II',
-                  questions: kuisBabII,
-                  color: '#36b1f0',
+                this.props.navigation.navigate('LoadSoal', {
+                  bab: 2,
                 })
               }
               activeOpacity={0.9}>
@@ -100,10 +102,8 @@ export default class Main extends React.Component {
             </TouchableOpacity>
             <TouchableOpacity
               onPress={() =>
-                this.props.navigation.navigate('Quiz', {
-                  title: 'Bab III',
-                  questions: kuisBabIII,
-                  color: '#36b1f0',
+                this.props.navigation.navigate('LoadSoal', {
+                  bab: 3,
                 })
               }
               activeOpacity={0.9}>

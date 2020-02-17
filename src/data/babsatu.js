@@ -9,6 +9,7 @@ const questions = [
       {id: '3', text: 'Australia'},
       {id: '4', text: 'Spanyol'},
     ],
+    jawaban: '1',
   },
   {
     /* No 2. */
@@ -20,6 +21,7 @@ const questions = [
       {id: '3', text: 'Mary Wigman dan Delsarte'},
       {id: '4', text: 'Doris Humphrey dan Martha Graham'},
     ],
+    jawaban: '2',
   },
   {
     /* No 3. */
@@ -30,6 +32,7 @@ const questions = [
       {id: '3', text: 'Emile Jaques-Dalcroze'},
       {id: '4', text: 'Rudolf von Graham', correct: true},
     ],
+    jawaban: '4',
   },
   {
     /* No 4. */

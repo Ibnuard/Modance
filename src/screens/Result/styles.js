@@ -11,7 +11,7 @@ const styles = StyleSheet.create({
   body: {
     flex: 2,
     backgroundColor: 'white',
-    marginHorizontal: 20,
+    paddingHorizontal: 20,
   },
   headerTop: {
     flexDirection: 'row',

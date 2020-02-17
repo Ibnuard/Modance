@@ -14,7 +14,6 @@ const styles = StyleSheet.create({
   },
   headerTop: {
     flexDirection: 'row',
-    backgroundColor: '#615BFF',
     padding: 20,
   },
   headerBab: {
@@ -93,9 +92,11 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
   },
   textMenu: {
-    alignSelf: 'center',
-    color: 'black',
-    marginTop: 14,
+    position: 'absolute',
+    top: 0,
+    marginLeft: 20,
+    marginTop: 30,
+    color: 'white',
     fontWeight: 'bold',
     fontSize: 24,
   },

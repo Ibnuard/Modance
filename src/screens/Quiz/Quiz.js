@@ -25,15 +25,19 @@ const styles = StyleSheet.create({
 });
 
 class Quiz extends React.Component {
-  state = {
-    correctCount: 0,
-    invalidCount: 0,
-    current: 1,
-    totalCount: this.props.navigation.getParam('questions', []).length,
-    activeQuestionIndex: 0,
-    answered: false,
-    answerCorrect: false,
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      correctCount: 0,
+      invalidCount: 0,
+      current: 1,
+      totalCount: this.props.navigation.getParam('questions', []).length,
+      activeQuestionIndex: 0,
+      answered: false,
+      answerCorrect: false,
+      questions: [],
+    };
+  }
 
   _gotoResult = (benar, salah, total) => {
     this.props.navigation.navigate('Result', {
@@ -43,12 +47,12 @@ class Quiz extends React.Component {
     });
   };
 
-  answer = correct => {
+  answer = (id, jawaban) => {
     this.setState(
       state => {
         const nextState = {answered: true};
 
-        if (correct) {
+        if (id == jawaban) {
           nextState.correctCount = state.correctCount + 1;
           nextState.answerCorrect = true;
         } else {
@@ -103,7 +107,7 @@ class Quiz extends React.Component {
                 <Button
                   key={answer.id}
                   text={answer.text}
-                  onPress={() => this.answer(answer.correct)}
+                  onPress={() => this.answer(answer.id, question.jawaban)}
                 />
               ))}
             </ButtonContainer>

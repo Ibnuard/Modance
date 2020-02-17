@@ -19,6 +19,7 @@ import QuizMenu from './src/screens/QuizMenu/QuizMenu';
 import QuizBab from './src/screens/QuizBab/QuizBab';
 import Result from './src/screens/Result/Result';
 import AboutUs from './src/screens/AboutUs/AboutUs';
+import LoadSoal from './src/screens/LoadSoal/LoadSoal';
 
 const RootStack = createSwitchNavigator(
   {
@@ -36,6 +37,7 @@ const RootStack = createSwitchNavigator(
     QuizBab,
     Result,
     AboutUs,
+    LoadSoal,
   },
   {
     initialRouteName: 'Main',

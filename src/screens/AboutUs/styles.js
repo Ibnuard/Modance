@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
     flex: 2,
     backgroundColor: 'white',
     alignItems: 'center',
-    marginHorizontal: 20,
+    paddingHorizontal: 20,
   },
   headerTop: {
     flexDirection: 'row',

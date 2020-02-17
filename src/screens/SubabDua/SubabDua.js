@@ -81,7 +81,7 @@ export default class Main extends React.Component {
                 )
               }
               activeOpacity={0.9}>
-              <View style={styles.bab}>
+              <View style={styles.bab} backgroundColor={'#73BEFF'}>
                 <Text style={styles.babText}>Jenis - Jenis Tari Modern</Text>
                 <Text style={styles.babDesc}>
                   Macam jenis - jenis tari kodern
