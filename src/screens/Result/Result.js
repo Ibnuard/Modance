@@ -6,6 +6,7 @@ import {
   StatusBar,
   TouchableOpacity,
   Dimensions,
+  ImageBackground,
 } from 'react-native';
 
 import firebase from 'react-native-firebase';
@@ -41,70 +42,83 @@ export default class Main extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <StatusBar backgroundColor="#615BFF" barStyle="light-content" />
-        <View style={styles.header}>
-          <View style={styles.headerTop}>
-            <Image
-              style={styles.imageAvatar}
-              source={require('../../images/defaultAvatar.png')}
-            />
+        <StatusBar backgroundColor="#4E71FF" barStyle="light-content" />
+        <ImageBackground
+          source={require('../../images/bgMain.png')}
+          style={{width: '100%', height: '100%'}}>
+          <View style={styles.header}>
             <View
               style={{
-                flex: 1,
+                flex: 2,
+                justifyContent: 'center',
+                alignContent: 'flex-start',
+              }}>
+              <TouchableOpacity
+                onPress={() => this.props.navigation.navigate('Main')}>
+                <Image
+                  style={styles.backBtn}
+                  source={require('../../images/back.png')}
+                />
+              </TouchableOpacity>
+              <Image
+                style={styles.imageAvatar}
+                source={require('../../images/defaultAvatar.png')}
+              />
+            </View>
+            <View style={styles.headerTop}></View>
+            <View
+              style={{
+                flex: 2,
                 flexDirection: 'column',
-                paddingHorizontal: 14,
-              }}>
-              <Text style={styles.profileText}>Hai, {this.state.name}</Text>
-              <Text style={styles.profileDesc}>Hasil pengerjaan kuis Anda</Text>
-            </View>
+                paddingHorizontal: 24,
+                paddingBottom: 24,
+              }}></View>
           </View>
-        </View>
-        <View style={styles.body}>
-          <ScrollView>
-            <Text style={{marginTop: 24, fontSize: 18, fontWeight: 'bold'}}>
-              Anda telah menyelesaikan Kuis
-            </Text>
-            <Text style={{fontSize: 14, fontWeight: 'normal'}}>
-              Silahkan cek total skor dan jumlah soal yang telah Anda kerjakan
-            </Text>
-            <Text
-              style={{marginVertical: 24, fontSize: 18, fontWeight: 'bold'}}>
-              Skor Anda
-            </Text>
-            <View
-              style={{
-                flex: 1,
-                flexDirection: 'row',
-                justifyContent: 'space-between',
-              }}>
-              <View style={styles.box}>
-                <Text style={{fontSize: 14, color: 'white'}}>Benar</Text>
-                <Text style={{fontSize: 42, color: 'white'}}>
-                  {this.state.benar}
-                </Text>
+          <View style={styles.body}>
+            <ScrollView>
+              <Text style={{fontSize: 18, fontWeight: 'bold', color: 'white'}}>
+                Skor Anda
+              </Text>
+              <Text
+                style={{fontSize: 14, fontWeight: 'normal', color: 'white'}}>
+                Silahkan cek total skor dan jumlah soal yang telah Anda kerjakan
+              </Text>
+              <View
+                style={{
+                  flex: 1,
+                  marginVertical: 24,
+                  flexDirection: 'row',
+                  justifyContent: 'space-between',
+                }}>
+                <View style={styles.box}>
+                  <Text style={{fontSize: 14, color: 'white'}}>Benar</Text>
+                  <Text style={{fontSize: 42, color: 'white'}}>
+                    {this.state.benar}
+                  </Text>
+                </View>
+                <View style={styles.box}>
+                  <Text style={{fontSize: 14, color: 'white'}}>Salah</Text>
+                  <Text style={{fontSize: 42, color: 'white'}}>
+                    {this.state.salah}
+                  </Text>
+                </View>
+                <View style={styles.box}>
+                  <Text style={{fontSize: 14, color: 'white'}}>Nilai</Text>
+                  <Text style={{fontSize: 42, color: 'white'}}>
+                    {Math.round(this.state.nilai)}
+                  </Text>
+                </View>
               </View>
-              <View style={styles.box}>
-                <Text style={{fontSize: 14, color: 'white'}}>Salah</Text>
-                <Text style={{fontSize: 42, color: 'white'}}>
-                  {this.state.salah}
-                </Text>
-              </View>
-              <View style={styles.box}>
-                <Text style={{fontSize: 14, color: 'white'}}>Nilai</Text>
-                <Text style={{fontSize: 42, color: 'white'}}>
-                  {this.state.nilai}
-                </Text>
-              </View>
-            </View>
-            <TouchableOpacity
-              onPress={() => this.props.navigation.navigate('Main')}
-              activeOpacity={0.9}>
-              <View style={styles.bab}>
-                <Text style={styles.babText}>Kembali ke Menu</Text>
-              </View>
-            </TouchableOpacity>
-          </ScrollView>
-        </View>
+              <TouchableOpacity
+                onPress={() => this.props.navigation.navigate('Main')}
+                activeOpacity={0.9}>
+                <View style={styles.bab}>
+                  <Text style={styles.babText}>Kembali ke Menu</Text>
+                </View>
+              </TouchableOpacity>
+            </ScrollView>
+          </View>
+        </ImageBackground>
       </View>
     );
   }

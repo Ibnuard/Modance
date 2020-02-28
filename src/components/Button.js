@@ -3,7 +3,8 @@ import {View, TouchableOpacity, Text, StyleSheet} from 'react-native';
 
 const styles = StyleSheet.create({
   button: {
-    backgroundColor: 'rgba(255, 255, 255, 0.3)',
+    backgroundColor: 'rgba(0, 0, 0, 0.25)',
+    borderColor: '#73BEFF',
     borderRadius: 10,
     paddingVertical: 24,
     paddingHorizontal: 18,
@@ -14,7 +15,7 @@ const styles = StyleSheet.create({
   },
   text: {
     color: '#fff',
-    fontSize: 18,
+    fontSize: 14,
     textAlign: 'center',
   },
   buttonContainer: {

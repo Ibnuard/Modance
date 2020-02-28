@@ -29,12 +29,12 @@ const styles = StyleSheet.create({
   imageAvatar: {
     position: 'absolute',
     right: 0,
-    margin: 14,
+    margin: 24,
     width: 36,
     height: 36,
   },
   backBtn: {
-    marginHorizontal: 14,
+    marginHorizontal: 24,
     width: 24,
     height: 18,
   },
@@ -54,10 +54,11 @@ const styles = StyleSheet.create({
   },
   bab: {
     flexDirection: 'column',
-    justifyContent: 'center',
+    paddingVertical: 18,
+    justifyContent: 'flex-end',
     marginTop: 24,
     width: '100%',
-    height: 100,
+    height: 200,
     shadowColor: '#000',
     borderRadius: 10,
     shadowOpacity: 0.5,
@@ -84,6 +85,14 @@ const styles = StyleSheet.create({
     textAlign: 'left',
     fontWeight: 'bold',
     fontSize: 14,
+  },
+  bgButton: {
+    position: 'absolute',
+    top: 0,
+    height: '60%',
+    width: '100%',
+    borderTopLeftRadius: 10,
+    borderTopRightRadius: 10,
   },
 });
 

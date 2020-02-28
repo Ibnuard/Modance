@@ -1,6 +1,7 @@
 import React from 'react';
 import {View, Text, ActivityIndicator, StyleSheet} from 'react-native';
 import axios from 'axios';
+import babi from '../../data/babdua';
 
 export default class Loading extends React.Component {
   constructor(props) {
@@ -16,11 +17,21 @@ export default class Loading extends React.Component {
       this.setState({
         questions: res.data,
       });
-      this.props.navigation.navigate('Quiz', {
-        title: 'Bab I',
-        questions: this.state.questions.response,
-        color: '#36b1f0',
-      });
+      if (this.state.bab != 4) {
+        this.props.navigation.navigate('Quiz', {
+          title: 'Bab I',
+          guide: babi,
+          questions: this.state.questions.response,
+          color: '#36b1f0',
+        });
+      } else {
+        this.props.navigation.navigate('Soal', {
+          title: 'Bab I',
+          guide: babi,
+          questions: this.state.questions.response,
+          color: '#36b1f0',
+        });
+      }
     });
   }
 

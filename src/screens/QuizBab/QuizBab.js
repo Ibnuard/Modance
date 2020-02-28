@@ -6,15 +6,12 @@ import {
   StatusBar,
   TouchableOpacity,
   Dimensions,
+  ImageBackground,
 } from 'react-native';
 
 import firebase from 'react-native-firebase';
 import styles from './styles';
 import {ScrollView} from 'react-native-gesture-handler';
-
-import kuisBabI from '../../data/babsatu';
-import kuisBabII from '../../data/babdua';
-import kuisBabIII from '../../data/babtiga';
 
 export default class Main extends React.Component {
   constructor(props) {
@@ -42,80 +39,110 @@ export default class Main extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <StatusBar backgroundColor="#615BFF" barStyle="light-content" />
-        <View style={styles.header}>
-          <View style={styles.headerTop}>
-            <TouchableOpacity
-              onPress={() => this.props.navigation.navigate('QuizMenu')}
-              style={{alignSelf: 'center'}}>
-              <Image
-                style={styles.backBtn}
-                source={require('../../images/back.png')}
-              />
-            </TouchableOpacity>
+        <StatusBar backgroundColor="#4E71FF" barStyle="light-content" />
+        <ImageBackground
+          source={require('../../images/body.png')}
+          style={{width: '100%', height: '100%'}}>
+          <View style={styles.header}>
             <Image
-              style={styles.imageAvatar}
-              source={require('../../images/defaultAvatar.png')}
+              style={{position: 'absolute'}}
+              source={require('../../images/header.png')}
             />
             <View
               style={{
-                flex: 1,
+                flex: 2,
+                justifyContent: 'center',
+                alignContent: 'flex-start',
+              }}>
+              <TouchableOpacity
+                onPress={() => this.props.navigation.navigate('QuizMenu')}>
+                <Image
+                  style={styles.backBtn}
+                  source={require('../../images/back.png')}
+                />
+              </TouchableOpacity>
+              <Image
+                style={styles.imageAvatar}
+                source={require('../../images/defaultAvatar.png')}
+              />
+            </View>
+            <View style={styles.headerTop}></View>
+            <View
+              style={{
+                flex: 2,
                 flexDirection: 'column',
-                paddingHorizontal: 14,
+                paddingHorizontal: 24,
+                paddingBottom: 24,
               }}>
               <Text style={styles.profileText}>Hai, {this.state.name}</Text>
               <Text style={styles.profileDesc}>
-                Pilih Bab untuk mulai mulai mengerjakan soal
+                Selamat datang, silahkan pilih bab untuk memulai kuis!
               </Text>
             </View>
           </View>
-        </View>
-        <View style={styles.body}>
-          <ScrollView>
-            <TouchableOpacity
-              onPress={() =>
-                this.props.navigation.navigate('LoadSoal', {
-                  bab: 1,
-                })
-              }
-              activeOpacity={0.9}>
-              <View style={styles.bab}>
-                <Text style={styles.babText}>Kuis BAB I</Text>
-                <Text style={styles.babDesc}>
-                  Sejarah dan Ciri Khas Tari Modern
-                </Text>
-              </View>
-            </TouchableOpacity>
-            <TouchableOpacity
-              onPress={() =>
-                this.props.navigation.navigate('LoadSoal', {
-                  bab: 2,
-                })
-              }
-              activeOpacity={0.9}>
-              <View style={styles.bab}>
-                <Text style={styles.babText}>Kuis BAB II</Text>
-                <Text style={styles.babDesc}>
-                  Sejarah dan Ciri Khas Tari Modern
-                </Text>
-              </View>
-            </TouchableOpacity>
-            <TouchableOpacity
-              onPress={() =>
-                this.props.navigation.navigate('LoadSoal', {
-                  bab: 3,
-                })
-              }
-              activeOpacity={0.9}>
-              <View style={styles.bab}>
-                <Text style={styles.babText}>Kuis BAB III</Text>
-                <Text style={styles.babDesc}>
-                  Sejarah dan Ciri Khas Tari Modern
-                </Text>
-              </View>
-            </TouchableOpacity>
-          </ScrollView>
-        </View>
+          <View style={styles.body}>
+            <ScrollView>
+              <TouchableOpacity
+                onPress={() =>
+                  this.props.navigation.navigate('LoadSoal', {
+                    bab: 1,
+                  })
+                }
+                activeOpacity={0.9}>
+                <View style={styles.bab} backgroundColor={'#4E71FF'}>
+                  <Image
+                    style={styles.bgButton}
+                    source={require('../../images/imgKuis.png')}
+                  />
+                  <Text style={styles.babText}>Kuis BAB 1</Text>
+                  <Text style={styles.babDesc}>
+                    Kuis BAB 1 tentang sejarah adanya Tari modern.
+                  </Text>
+                  <Text style={styles.babDescLM}>Mulai Kuis ></Text>
+                </View>
+              </TouchableOpacity>
+              <TouchableOpacity
+                onPress={() =>
+                  this.props.navigation.navigate('LoadSoal', {
+                    bab: 2,
+                  })
+                }
+                activeOpacity={0.9}>
+                <View style={styles.bab} backgroundColor={'#4E71FF'}>
+                  <Image
+                    style={styles.bgButton}
+                    source={require('../../images/imgAbout.png')}
+                  />
+                  <Text style={styles.babText}>Kuis BAB 2</Text>
+                  <Text style={styles.babDesc}>
+                    Kuis BAB 2 tentang ciri khas dan jenis Tari modern.
+                  </Text>
+                  <Text style={styles.babDescLM}>Mulai Kuis ></Text>
+                </View>
+              </TouchableOpacity>
+              <TouchableOpacity
+                onPress={() =>
+                  this.props.navigation.navigate('LoadSoal', {
+                    bab: 3,
+                  })
+                }
+                activeOpacity={0.9}>
+                <View style={styles.bab} backgroundColor={'#4E71FF'}>
+                  <Image
+                    style={styles.bgButton}
+                    source={require('../../images/imgMateri.png')}
+                  />
+                  <Text style={styles.babText}>Kuis BAB 3</Text>
+                  <Text style={styles.babDesc}>
+                    Kuis BAB 3 tentang tokoh - tokoh pada tari modern.
+                  </Text>
+                  <Text style={styles.babDescLM}>Mulai Kuis ></Text>
+                </View>
+              </TouchableOpacity>
+              <View style={{height: 24}} />
+            </ScrollView>
+          </View>
+        </ImageBackground>
       </View>
     );
   }

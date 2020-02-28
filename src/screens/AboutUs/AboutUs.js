@@ -34,7 +34,7 @@ export default class Main extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <StatusBar backgroundColor="#615BFF" barStyle="light-content" />
+        <StatusBar backgroundColor="#4E71FF" barStyle="light-content" />
         <View style={styles.header}>
           <View style={styles.headerTop}>
             <TouchableOpacity

@@ -55,10 +55,11 @@ const styles = StyleSheet.create({
   },
   bab: {
     justifyContent: 'center',
+    paddingHorizontal: 25,
     marginTop: 24,
     width: '100%',
     height: 100,
-    backgroundColor: '#73BEFF',
+    backgroundColor: '#FFFFFF',
     shadowColor: '#000',
     borderRadius: 10,
     shadowOpacity: 0.5,
@@ -66,8 +67,7 @@ const styles = StyleSheet.create({
     elevation: 8,
   },
   babText: {
-    color: 'white',
-    textAlign: 'center',
+    color: '#070707',
     fontWeight: 'bold',
     fontSize: 18,
   },

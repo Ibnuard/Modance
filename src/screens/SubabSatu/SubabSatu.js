@@ -42,9 +42,13 @@ export default class Main extends React.Component {
       <View style={styles.container}>
         <StatusBar backgroundColor="#4E71FF" barStyle="light-content" />
         <ImageBackground
-          source={require('../../images/bgMain.png')}
+          source={require('../../images/body.png')}
           style={{width: '100%', height: '100%'}}>
           <View style={styles.header}>
+            <Image
+              style={{position: 'absolute'}}
+              source={require('../../images/header.png')}
+            />
             <View
               style={{
                 flex: 2,
@@ -68,7 +72,7 @@ export default class Main extends React.Component {
               style={{
                 flex: 2,
                 flexDirection: 'column',
-                paddingHorizontal: 14,
+                paddingHorizontal: 24,
                 paddingBottom: 24,
               }}>
               <Text style={styles.profileText}>Hai, {this.state.name}</Text>
@@ -88,7 +92,11 @@ export default class Main extends React.Component {
                   )
                 }
                 activeOpacity={0.9}>
-                <View style={styles.bab} backgroundColor={'#73BEFF'}>
+                <View style={styles.bab} backgroundColor={'#4E71FF'}>
+                  <Image
+                    style={styles.bgButton}
+                    source={require('../../images/imgMateri.png')}
+                  />
                   <Text style={styles.babText}>Sejarah Tari Modern</Text>
                   <Text style={styles.babDesc}>
                     Pelopor tari modern di Amerika Serikat adalah Loie Fuller...
@@ -105,7 +113,11 @@ export default class Main extends React.Component {
                   )
                 }
                 activeOpacity={0.9}>
-                <View style={styles.bab} backgroundColor={'#FBA36A'}>
+                <View style={styles.bab} backgroundColor={'#4E71FF'}>
+                  <Image
+                    style={styles.bgButton}
+                    source={require('../../images/imgKuis.png')}
+                  />
                   <Text style={styles.babText}>Definisi Tari Modern</Text>
                   <Text style={styles.babDesc}>
                     Kenneth Macgowan Dalam bukunya “The Living Stage...
@@ -122,10 +134,15 @@ export default class Main extends React.Component {
                   )
                 }
                 activeOpacity={0.9}>
-                <View style={styles.bab} backgroundColor={'#7052FF'}>
+                <View style={styles.bab} backgroundColor={'#4E71FF'}>
+                  <Image
+                    style={styles.bgButton}
+                    source={require('../../images/imgSetting.png')}
+                  />
                   <Text style={styles.babText}>Ciri Khas</Text>
                   <Text style={styles.babDesc}>
-                    Pola-pola gerak yang lebih bebas tapi masih
+                    Pola-pola gerak yang lebih bebas tapi masih teratur dalam
+                    ritme ...
                   </Text>
                   <Text style={styles.babDescLM}>Baca Selengkapnya.</Text>
                 </View>
@@ -139,14 +156,20 @@ export default class Main extends React.Component {
                   )
                 }
                 activeOpacity={0.9}>
-                <View style={styles.bab} backgroundColor={'#FF5F5E'}>
+                <View style={styles.bab} backgroundColor={'#4E71FF'}>
+                  <Image
+                    style={styles.bgButton}
+                    source={require('../../images/imgAbout.png')}
+                  />
                   <Text style={styles.babText}>Ciri Khas Tari Modern</Text>
                   <Text style={styles.babDesc}>
-                    Ciri khas gerak tari Modern Ragam gerak tari...
+                    Ciri khas gerak tari Modern Ragam gerak tari modern,
+                    terdapat ...
                   </Text>
                   <Text style={styles.babDescLM}>Baca Selengkapnya.</Text>
                 </View>
               </TouchableOpacity>
+              <View style={{height: 24}}></View>
             </ScrollView>
           </View>
         </ImageBackground>

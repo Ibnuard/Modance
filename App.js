@@ -20,6 +20,9 @@ import QuizBab from './src/screens/QuizBab/QuizBab';
 import Result from './src/screens/Result/Result';
 import AboutUs from './src/screens/AboutUs/AboutUs';
 import LoadSoal from './src/screens/LoadSoal/LoadSoal';
+import OnBoarding from './src/screens/OnBoarding/OnBoarding';
+import Soal from './src/screens/Soal/Soal';
+import SplashScreen from './src/screens/SplashScreen/SplashScreen';
 
 const RootStack = createSwitchNavigator(
   {
@@ -38,9 +41,12 @@ const RootStack = createSwitchNavigator(
     Result,
     AboutUs,
     LoadSoal,
+    OnBoarding,
+    Soal,
+    SplashScreen,
   },
   {
-    initialRouteName: 'Main',
+    initialRouteName: 'SplashScreen',
   },
 );
 const App = createAppContainer(RootStack);

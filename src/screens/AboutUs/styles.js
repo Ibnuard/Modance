@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
   },
   headerTop: {
     flexDirection: 'row',
-    backgroundColor: '#615BFF',
+    backgroundColor: '#4E71FF',
     padding: 20,
   },
   titleText: {

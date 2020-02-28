@@ -80,6 +80,16 @@ export default class Main extends React.Component {
                 onPress={() => this.props.navigation.navigate('SubabSatu')}
                 activeOpacity={0.9}>
                 <View style={styles.bab}>
+                  <Image
+                    style={{
+                      position: 'absolute',
+                      right: 0,
+                      bottom: 0,
+                      height: '100%',
+                      width: '42%',
+                    }}
+                    source={require('../../images/circle.png')}
+                  />
                   <Text style={styles.babText}>Yuk Belajar BAB 1</Text>
                   <BabOne
                     style={{position: 'absolute', right: 0, bottom: 0}}
@@ -92,6 +102,16 @@ export default class Main extends React.Component {
                 onPress={() => this.props.navigation.navigate('SubabDua')}
                 activeOpacity={0.9}>
                 <View style={styles.bab}>
+                  <Image
+                    style={{
+                      position: 'absolute',
+                      right: 0,
+                      bottom: 0,
+                      height: '100%',
+                      width: '42%',
+                    }}
+                    source={require('../../images/circle.png')}
+                  />
                   <Text style={styles.babText}>Yuk Belajar BAB 2</Text>
                   <BabTwo
                     style={{position: 'absolute', right: 0, bottom: 0}}
@@ -104,6 +124,16 @@ export default class Main extends React.Component {
                 onPress={() => this.props.navigation.navigate('SubabTiga')}
                 activeOpacity={0.9}>
                 <View style={styles.bab}>
+                  <Image
+                    style={{
+                      position: 'absolute',
+                      right: 0,
+                      bottom: 0,
+                      height: '100%',
+                      width: '42%',
+                    }}
+                    source={require('../../images/circle.png')}
+                  />
                   <Text style={styles.babText}>Yuk Belajar BAB 3</Text>
                   <BabOne
                     style={{position: 'absolute', right: 0, bottom: 0}}

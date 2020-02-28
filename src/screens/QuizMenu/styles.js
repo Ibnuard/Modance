@@ -6,15 +6,19 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     width: '100%',
+    height: '100%',
     justifyContent: 'center',
   },
   body: {
-    flex: 2,
+    flex: 2.4,
     marginHorizontal: 20,
   },
+  header: {
+    flex: 0.8,
+  },
   headerTop: {
+    flex: 0.5,
     flexDirection: 'row',
-    backgroundColor: '#615BFF',
     padding: 20,
   },
   titleText: {
@@ -24,12 +28,14 @@ const styles = StyleSheet.create({
     color: 'white',
   },
   imageAvatar: {
+    position: 'absolute',
+    right: 0,
+    margin: 24,
     width: 36,
     height: 36,
   },
   backBtn: {
-    alignSelf: 'center',
-    marginRight: 14,
+    marginHorizontal: 24,
     width: 24,
     height: 18,
   },
@@ -48,12 +54,12 @@ const styles = StyleSheet.create({
     fontSize: 14,
   },
   bab: {
-    flexDirection: 'column',
     justifyContent: 'center',
-    marginTop: 50,
+    paddingHorizontal: 25,
+    marginTop: 24,
     width: '100%',
-    height: 120,
-    backgroundColor: '#615BFF',
+    height: 100,
+    backgroundColor: '#FFFFFF',
     shadowColor: '#000',
     borderRadius: 10,
     shadowOpacity: 0.5,
@@ -61,8 +67,7 @@ const styles = StyleSheet.create({
     elevation: 8,
   },
   babText: {
-    color: 'white',
-    textAlign: 'center',
+    color: '#070707',
     fontWeight: 'bold',
     fontSize: 18,
   },

@@ -25,15 +25,15 @@ export default class Main extends React.Component {
       name: '',
       entries: [
         {
-          thumbnail: 'https://source.unsplash.com/1024x768/?nature',
+          thumbnail: 'https://source.unsplash.com/1024x768/?dance',
           title: 'Bab I',
         },
         {
-          thumbnail: 'https://source.unsplash.com/1024x768/?water',
+          thumbnail: 'https://source.unsplash.com/1024x768/?dancer',
           title: 'Bab II',
         },
         {
-          thumbnail: 'https://source.unsplash.com/1024x768/?girl',
+          thumbnail: 'https://source.unsplash.com/1024x768/?party',
           title: 'Bab III',
         },
       ],
@@ -76,9 +76,13 @@ export default class Main extends React.Component {
       <View style={styles.container}>
         <StatusBar backgroundColor="#4E71FF" barStyle="light-content" />
         <ImageBackground
-          source={require('../../images/bgMain.png')}
+          source={require('../../images/body.png')}
           style={{width: '100%', height: '100%'}}>
           <View style={styles.header}>
+            <Image
+              style={{position: 'absolute'}}
+              source={require('../../images/header.png')}
+            />
             <View style={styles.headerTop}>
               <Image
                 style={styles.imageAvatar}

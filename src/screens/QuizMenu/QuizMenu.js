@@ -6,7 +6,10 @@ import {
   StatusBar,
   TouchableOpacity,
   Dimensions,
+  ImageBackground,
 } from 'react-native';
+import BabOne from '../../images/babone.svg';
+import BabTwo from '../../images/babtwo.svg';
 
 import firebase from 'react-native-firebase';
 import styles from './styles';
@@ -34,58 +37,96 @@ export default class Main extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <StatusBar backgroundColor="#615BFF" barStyle="light-content" />
-        <View style={styles.header}>
-          <View style={styles.headerTop}>
-            <TouchableOpacity
-              onPress={() => this.props.navigation.navigate('Main')}
-              style={{alignSelf: 'center'}}>
-              <Image
-                style={styles.backBtn}
-                source={require('../../images/back.png')}
-              />
-            </TouchableOpacity>
-            <Image
-              style={styles.imageAvatar}
-              source={require('../../images/defaultAvatar.png')}
-            />
+        <StatusBar backgroundColor="#4E71FF" barStyle="light-content" />
+        <ImageBackground
+          source={require('../../images/bgMain.png')}
+          style={{width: '100%', height: '100%'}}>
+          <View style={styles.header}>
             <View
               style={{
-                flex: 1,
+                flex: 2,
+                justifyContent: 'center',
+                alignContent: 'flex-start',
+              }}>
+              <TouchableOpacity
+                onPress={() => this.props.navigation.navigate('Main')}>
+                <Image
+                  style={styles.backBtn}
+                  source={require('../../images/back.png')}
+                />
+              </TouchableOpacity>
+              <Image
+                style={styles.imageAvatar}
+                source={require('../../images/defaultAvatar.png')}
+              />
+            </View>
+            <View style={styles.headerTop}></View>
+            <View
+              style={{
+                flex: 2,
                 flexDirection: 'column',
-                paddingHorizontal: 14,
+                paddingHorizontal: 24,
+                paddingBottom: 24,
               }}>
               <Text style={styles.profileText}>Hai, {this.state.name}</Text>
               <Text style={styles.profileDesc}>
-                Pilih Bab untuk mulai belajar
+                Mulai kerjakan kuis atau latihan soal!
               </Text>
             </View>
           </View>
-        </View>
-        <View style={styles.body}>
-          <ScrollView>
-            <TouchableOpacity
-              onPress={() => this.props.navigation.navigate('QuizBab')}
-              activeOpacity={0.9}>
-              <View style={styles.bab}>
-                <Text style={styles.babText}>Kuis</Text>
-                <Text style={styles.babDesc}>
-                  Kerjakan kuis sesuai dengan bab pilihan
-                </Text>
-              </View>
-            </TouchableOpacity>
-            <TouchableOpacity
-              onPress={() => this.props.navigation.navigate('SubabDua')}
-              activeOpacity={0.9}>
-              <View style={styles.bab}>
-                <Text style={styles.babText}>Latihan Soal</Text>
-                <Text style={styles.babDesc}>
-                  Kerjakan latihan soal dengan semua bab
-                </Text>
-              </View>
-            </TouchableOpacity>
-          </ScrollView>
-        </View>
+          <View style={styles.body}>
+            <ScrollView>
+              <TouchableOpacity
+                onPress={() => this.props.navigation.navigate('QuizBab')}
+                activeOpacity={0.9}>
+                <View style={styles.bab}>
+                  <Image
+                    style={{
+                      position: 'absolute',
+                      right: 0,
+                      bottom: 0,
+                      height: '100%',
+                      width: '42%',
+                    }}
+                    source={require('../../images/circle.png')}
+                  />
+                  <Text style={styles.babText}>Kuis</Text>
+                  <BabOne
+                    style={{position: 'absolute', right: 0, bottom: 0}}
+                    width={100}
+                    height={100}
+                  />
+                </View>
+              </TouchableOpacity>
+              <TouchableOpacity
+                onPress={() =>
+                  this.props.navigation.navigate('LoadSoal', {
+                    bab: 4,
+                  })
+                }
+                activeOpacity={0.9}>
+                <View style={styles.bab}>
+                  <Image
+                    style={{
+                      position: 'absolute',
+                      right: 0,
+                      bottom: 0,
+                      height: '100%',
+                      width: '42%',
+                    }}
+                    source={require('../../images/circle.png')}
+                  />
+                  <Text style={styles.babText}>Latihan Soal</Text>
+                  <BabTwo
+                    style={{position: 'absolute', right: 0, bottom: 0}}
+                    width={100}
+                    height={100}
+                  />
+                </View>
+              </TouchableOpacity>
+            </ScrollView>
+          </View>
+        </ImageBackground>
       </View>
     );
   }
