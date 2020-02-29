@@ -1,7 +1,9 @@
 import React from 'react';
 import {View, Text, ActivityIndicator, StyleSheet} from 'react-native';
 import axios from 'axios';
-import babi from '../../data/babdua';
+import babi from '../../data/babsatu';
+import babii from '../../data/babdua';
+import babiii from '../../data/babtiga';
 
 export default class Loading extends React.Component {
   constructor(props) {
@@ -9,6 +11,7 @@ export default class Loading extends React.Component {
     this.state = {
       bab: this.props.navigation.state.params.bab,
       questions: [],
+      guide: '',
     };
   }
 
@@ -17,10 +20,31 @@ export default class Loading extends React.Component {
       this.setState({
         questions: res.data,
       });
+
+      switch (this.state.bab) {
+        case 1:
+          this.setState({
+            guide: babi,
+          });
+          break;
+        case 2:
+          this.setState({
+            guide: babii,
+          });
+          break;
+        case 3:
+          this.setState({
+            guide: babiii,
+          });
+          break;
+        default:
+          '';
+      }
+
       if (this.state.bab != 4) {
         this.props.navigation.navigate('Quiz', {
           title: 'Bab I',
-          guide: babi,
+          guide: this.state.guide,
           questions: this.state.questions.response,
           color: '#36b1f0',
         });

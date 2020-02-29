@@ -22,7 +22,7 @@ const slides = [
     title: 'Modance',
     titleStyle: {fontWeight: 'bold'},
     text: 'Mengetahui sejarah tarian modern dan pengemuka tarian modern',
-    image: require('../../images/oncircle.png'),
+    image: require('../../images/on1.png'),
     backgroundColor: '#4E71FF',
   },
   {
@@ -31,7 +31,7 @@ const slides = [
     titleStyle: {fontWeight: 'bold'},
     text:
       'Mengetahui ciri - ciri tarian modern dan juga mengetahui jenis-jenis tarian modern',
-    image: require('../../images/oncircle.png'),
+    image: require('../../images/on2.png'),
     backgroundColor: '#4E71FF',
   },
   {
@@ -40,7 +40,7 @@ const slides = [
     titleStyle: {fontWeight: 'bold'},
     text:
       'Mengerjakan Quiz dan Tes untuk mengetahui pengetahuan anda tentang tari modern',
-    image: require('../../images/oncircle.png'),
+    image: require('../../images/on3.png'),
     backgroundColor: '#4E71FF',
   },
 ];
@@ -72,8 +72,8 @@ export default class App extends React.Component {
         slides={slides}
         showSkipButton={true}
         showPrevButton={true}
-        onSkip={() => this.props.navigation.navigate('Main')}
-        onDone={() => this.props.navigation.navigate('Main')}
+        onSkip={() => this.props.navigation.navigate('Login')}
+        onDone={() => this.props.navigation.navigate('Login')}
       />
     );
   }

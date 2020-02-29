@@ -32,7 +32,7 @@ export default class SignUp extends React.Component {
         username: this.state.name,
         email: this.state.email,
       })
-      .then(alert('Succes'))
+      .then(this.props.navigation.navigate('Login'))
       .catch(error => this.setState({errorMessage: error.message}));
   };
 
@@ -64,9 +64,9 @@ export default class SignUp extends React.Component {
     return (
       <View style={styles.container}>
         <ImageBackground
-          source={require('../../images/bgRegister.png')}
+          source={require('../../images/bgLogin.png')}
           style={{width: '100%', height: '100%'}}>
-          <StatusBar backgroundColor="black" barStyle="light-content" />
+          <StatusBar backgroundColor="#4E71FF" barStyle="light-content" />
           <View
             style={{
               flex: 1,

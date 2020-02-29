@@ -47,7 +47,7 @@ export default class Login extends React.Component {
         <ImageBackground
           source={require('../../images/bgLogin.png')}
           style={{width: '100%', height: '100%'}}>
-          <StatusBar backgroundColor="black" barStyle="light-content" />
+          <StatusBar backgroundColor="#4E71FF" barStyle="light-content" />
           <View
             style={{
               flex: 1,

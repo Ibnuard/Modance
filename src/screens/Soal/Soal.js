@@ -78,17 +78,12 @@ class Soal extends React.Component {
   render() {
     const questions = this.props.navigation.getParam('questions', []);
     const question = questions[this.state.activeQuestionIndex];
+
     return (
       <View style={[styles.container, {backgroundColor: '#4E71FF'}]}>
         <StatusBar barStyle="light-content" />
         <SafeAreaView style={styles.safearea}>
           <View>
-            <ProgressBarAndroid
-              styleAttr="Horizontal"
-              indeterminate={false}
-              progress={0.8}
-              color="#FBA36A"
-            />
             <Text style={styles.titleText}>
               Soal {`${this.state.current}/${this.state.totalCount}`}
             </Text>

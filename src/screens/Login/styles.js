@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
   },
   loginButton: {
     marginVertical: 32,
-    backgroundColor: '#615BFF',
+    backgroundColor: '#73BEFF',
     marginHorizontal: 20,
     justifyContent: 'center',
   },

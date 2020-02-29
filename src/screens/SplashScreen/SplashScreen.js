@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, StatusBar, Image, StyleSheet} from 'react-native';
+import {View, StatusBar, Image, StyleSheet, Text} from 'react-native';
 
 export default class Component extends React.Component {
   async componentDidMount() {
@@ -27,6 +27,16 @@ export default class Component extends React.Component {
             resizeMode="contain"
             style={styles.logo}
           />
+          <Text
+            style={{
+              alignSelf: 'center',
+              justifyContent: 'center',
+              fontSize: 18,
+              color: '#FFF',
+              fontWeight: 'bold',
+            }}>
+            Modance
+          </Text>
         </View>
       </View>
     );
@@ -36,6 +46,8 @@ export default class Component extends React.Component {
 const styles = StyleSheet.create({
   mainContainer: {
     flex: 1,
+    width: '100%',
+    alignSelf: 'center',
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#4E71FF',

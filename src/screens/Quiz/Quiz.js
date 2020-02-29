@@ -5,6 +5,7 @@ import {
   Text,
   SafeAreaView,
   ImageBackground,
+  ProgressBarAndroid,
 } from 'react-native';
 import styles from './styles';
 import {Button, ButtonContainer} from '../../components/Button';
@@ -23,7 +24,12 @@ class Quiz extends React.Component {
       showguide: false,
       answerCorrect: false,
       questions: [],
+      progressStatus: 1,
     };
+  }
+
+  componentDidMount() {
+    this.start_Progress();
   }
 
   _gotoResult = (benar, salah, total) => {
@@ -51,6 +57,7 @@ class Quiz extends React.Component {
   };
 
   hideGuide = () => {
+    this.clear_Progress();
     this.nextQuestion();
   };
 
@@ -74,6 +81,25 @@ class Quiz extends React.Component {
     });
   };
 
+  start_Progress = () => {
+    this.value = setInterval(() => {
+      if (this.state.progressStatus != 0.0) {
+        this.setState({progressStatus: this.state.progressStatus - 0.01});
+        this.checkTimer();
+      }
+    }, 100);
+  };
+
+  checkTimer = () => {
+    if (this.state.progressStatus < 0.0) {
+      this.answer(5, '');
+    }
+  };
+
+  clear_Progress = () => {
+    this.setState({progressStatus: 1});
+  };
+
   render() {
     const questions = this.props.navigation.getParam('questions', []);
     const question = questions[this.state.activeQuestionIndex];
@@ -86,6 +112,13 @@ class Quiz extends React.Component {
         <StatusBar barStyle="light-content" />
         <SafeAreaView style={styles.safearea}>
           <View>
+            <ProgressBarAndroid
+              styleAttr="Horizontal"
+              indeterminate={false}
+              progress={this.state.progressStatus}
+              animating={true}
+              color="#FFF"
+            />
             <Text style={styles.titleText}>
               Soal {`${this.state.current}/${this.state.totalCount}`}
             </Text>

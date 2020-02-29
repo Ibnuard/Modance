@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
   },
   headerTop: {
     flexDirection: 'row',
-    backgroundColor: '#615BFF',
+    backgroundColor: '#4E71FF',
     padding: 20,
   },
   titleText: {
@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
     marginTop: 50,
     width: '100%',
     height: 50,
-    backgroundColor: '#615BFF',
+    backgroundColor: '#4E71FF',
     shadowColor: '#000',
     borderRadius: 10,
     shadowOpacity: 0.5,
